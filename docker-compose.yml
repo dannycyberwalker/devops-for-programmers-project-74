@@ -4,5 +4,6 @@ services:
   app:
     image: hexlet/app:v1
     build: .
+    command: npm test
     volumes:
       - ./app:/app
