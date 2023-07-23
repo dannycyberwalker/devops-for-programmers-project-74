@@ -1,11 +1,22 @@
 services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USERNAME: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - 5432:5432
+
   app:
     build:
       context: .
       dockerfile: Dockerfile
+    depends_on:
+      - db
     ports:
       - 8080:8080
-    command: npm run dev
+    command: bash -c 'sleep 3 && npm run dev'
     volumes:
     - ./app:/app
 
