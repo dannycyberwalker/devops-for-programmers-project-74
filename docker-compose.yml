@@ -1,10 +1,18 @@
 version: '3.1'
 
 services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: postgres
+    
   app:
-    image: hexlet/app:v1
+    image: dannyhf/devops-for-programmers-project-74
     build:
       context: .
       dockerfile: Dockerfile.production
+    depends_on:
+      - db
     command: npm test
-    image: dannyhf/devops-for-programmers-project-74
