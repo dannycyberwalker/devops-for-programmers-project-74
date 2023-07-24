@@ -15,4 +15,4 @@ services:
       dockerfile: Dockerfile.production
     depends_on:
       - db
-    command: npm test
+    command: bash -c 'sleep 3 && npm test'

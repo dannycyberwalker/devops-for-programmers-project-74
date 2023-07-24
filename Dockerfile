@@ -8,5 +8,3 @@ COPY app/package-lock.json .
 COPY app/ .
 
 RUN npm ci
-
-CMD ["npm", "test"]
