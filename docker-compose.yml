@@ -9,7 +9,7 @@ services:
       POSTGRES_DB: postgres
     
   app:
-    image: dannyhf/devops-for-programmers-project-74
+    image: dannyhf/devops-for-programmers-project-74:latest
     build:
       context: .
       dockerfile: Dockerfile.production
