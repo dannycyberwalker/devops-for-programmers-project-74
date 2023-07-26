@@ -1,3 +1,5 @@
+version: '3.1'
+
 services:
   app:
     build:
@@ -5,7 +7,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - 8080:8080
-    command: bash -c 'sleep 3 && npm run dev'
+    command: bash -c 'sleep 3 && npm ci && npm run dev'
     volumes:
     - ./app:/app
 
