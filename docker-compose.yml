@@ -3,16 +3,20 @@ version: '3.1'
 services:
   db:
     image: postgres:latest
+    env_file:
+      - .env
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: postgres
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}
     
   app:
     image: dannyhf/devops-for-programmers-project-74:latest
     build:
       context: .
       dockerfile: Dockerfile.production
+    env_file:
+      - .env
     depends_on:
       - db
     command: bash -c 'sleep 3 && npm test'

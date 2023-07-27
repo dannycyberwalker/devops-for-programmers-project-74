@@ -8,7 +8,7 @@ COPY app/package-lock.json .
 RUN npm ci
 
 COPY app/. .
-COPY app/.env.example .env
+COPY .env.github .env
 
 EXPOSE 8080
 
