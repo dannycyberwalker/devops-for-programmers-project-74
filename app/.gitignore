@@ -59,4 +59,3 @@ profile*
 
 *.sqlite
 tmp/
-../.env
