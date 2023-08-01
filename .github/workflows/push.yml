@@ -24,6 +24,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Prepare environment
+        run: make prep-github-ci
+
       - name: Set up Docker BuildX
         uses: docker/setup-buildx-action@v2
 
