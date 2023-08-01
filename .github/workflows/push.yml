@@ -9,6 +9,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Prepare environment
+        run: make prep-github-ci
+
       - name: Run test
         run: make test
 
