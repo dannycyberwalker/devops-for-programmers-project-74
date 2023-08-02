@@ -5,7 +5,7 @@ prep-dev:
 	cp .env.example .env
 
 dev: 
-	docker-compose up
+	doid -g -n <yourname>cker compose up
 
 test:
-	docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
+	docker compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
