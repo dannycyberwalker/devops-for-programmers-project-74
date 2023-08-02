@@ -4,14 +4,19 @@
 ### Test, push image:
 [![Actions Status](https://github.com/dannycyberwalker/devops-for-programmers-project-74/actions/workflows/push.yml/badge.svg)](https://github.com/dannycyberwalker/devops-for-programmers-project-74/actions)
 
+### Host system requirements
+* Docker v24.0.5 or other compatible versions.
+* docker-compose-plugin v2.20.2 or other compatible versions.
+* make
+
 [Docker image](https://hub.docker.com/repository/docker/dannyhf/devops-for-programmers-project-74/general)
 
-#### Develop:
+### Development
 Prepare dev environment:
 ```
 make prep-dev
 ```
-Run tests
+ Run tests
 ```
 make test
 ```
@@ -19,9 +24,9 @@ Run app
 ```
 make dev
 ```
-#### Github actions
-Set up github secrets `DATABASE_PASSWORD` and `DATABASE_USENAME`
-Prepare github action environment:
+### Github actions
+1. Set up github secrets `DATABASE_PASSWORD` and `DATABASE_USENAME`.
+2. Prepare github action environment in pipeline:
 ```
 make rep-github-ci
 ```
