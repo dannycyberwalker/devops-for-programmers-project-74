@@ -13,6 +13,9 @@ jobs:
         run: make prep-github-ci
 
       - name: Run test
+        env: 
+          DATABASE_PASSWORD: ${{secrets.DATABASE_PASSWORD}}
+          DATABASE_USERNAME: ${{secrets.DATABASE_USERNAME}}
         run: make test
 
 
@@ -38,6 +41,9 @@ jobs:
 
       - name: Push image
         uses: docker/build-push-action@v4
+        env: 
+          DATABASE_PASSWORD: ${{secrets.DATABASE_PASSWORD}}
+          DATABASE_USERNAME: ${{secrets.DATABASE_USERNAME}}
         with:
           context: .
           file: Dockerfile.production
