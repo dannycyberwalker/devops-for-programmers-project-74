@@ -13,11 +13,10 @@ jobs:
         run: make prep-github-ci
 
       - name: Run test
-        env: 
-          DATABASE_PASSWORD: ${{secrets.DATABASE_PASSWORD}}
-          DATABASE_USERNAME: ${{secrets.DATABASE_USERNAME}}
-        run: make test
-
+        run: | 
+          DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }}
+          DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME }}
+          make test
 
   push-docker-image:
     runs-on: ubuntu-latest
