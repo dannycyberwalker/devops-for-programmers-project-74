@@ -16,5 +16,3 @@ services:
     depends_on:
       - db
     command: bash -c 'sleep 3 && npm test'
-    env_file:
-      - .env
