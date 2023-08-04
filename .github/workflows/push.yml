@@ -10,13 +10,13 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Prepare environment
-        run: make prep-github-ci
+        run: |
+          make prep-github-ci
+          echo DATABASE_PASSWORD=${{secrets.DATABASE_PASSWORD}} >> .env
+          echo DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME }} >> .env
 
       - name: Run test
-        run: | 
-          DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }}
-          DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME }}
-          make test
+        run: make test
 
   push-docker-image:
     runs-on: ubuntu-latest
@@ -28,9 +28,9 @@ jobs:
 
       - name: Prepare environment
         run: |
-          DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }}
-          DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME }} 
           make prep-github-ci
+          echo DATABASE_PASSWORD=${{secrets.DATABASE_PASSWORD}} >> .env
+          echo DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME }} >> .env
 
       - name: Set up Docker BuildX
         uses: docker/setup-buildx-action@v2
