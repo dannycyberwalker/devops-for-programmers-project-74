@@ -12,6 +12,10 @@
 [Docker image](https://hub.docker.com/repository/docker/dannyhf/devops-for-programmers-project-74/general)
 
 ### Development
+Instnall dependency:
+```
+make ci
+``` 
 Run tests:
 ```
 make test
@@ -21,5 +25,10 @@ Run app:
 make dev
 ```
 ### Github actions
-1. Set up github secrets `DATABASE_PASSWORD` and `DATABASE_USENAME` in repository.
+1. Set up github secrets `DATABASE_PASSWORD` and `DATABASE_USENAME`.
+2. Prepare github action environment in pipeline:
+```
+make rep-github-ci
+```
+
 
