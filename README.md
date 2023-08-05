@@ -12,23 +12,14 @@
 [Docker image](https://hub.docker.com/repository/docker/dannyhf/devops-for-programmers-project-74/general)
 
 ### Development
-Prepare dev environment:
-```
-make prep-dev
-```
- Run tests
+Run tests:
 ```
 make test
 ```
-Run app
+Run app:
 ```
 make dev
 ```
 ### Github actions
-1. Set up github secrets `DATABASE_PASSWORD` and `DATABASE_USENAME`.
-2. Prepare github action environment in pipeline:
-```
-make rep-github-ci
-```
-
+1. Set up github secrets `DATABASE_PASSWORD` and `DATABASE_USENAME` in repository.
 
