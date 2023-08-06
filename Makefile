@@ -1,6 +1,3 @@
-prep-github-ci:
-	cp .env.github .env
-
 dev: 
 	docker compose up
 

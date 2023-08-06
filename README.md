@@ -25,10 +25,7 @@ Run app:
 make dev
 ```
 ### Github actions
-1. Set up github secrets `DATABASE_PASSWORD` and `DATABASE_USENAME`.
-2. Prepare github action environment in pipeline:
-```
-make rep-github-ci
-```
+1. Set up github secrets `DATABASE_PASSWORD` and `DATABASE_USERNAME`.
+2. Write secrets as enviroment variable to `.env` file with same names.
 
 
